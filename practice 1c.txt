@@ -1,0 +1,19 @@
+def isCyclicRotation(p, q):
+    i, j, k, n = 0, 0, 0, len(p)
+    reset = False
+    while i < 2 * n:
+        if k == n:
+            return 1
+        if p[i % n] == q[j % n]:
+            i += 1
+            j += 1
+            k += 1
+        elif reset:
+            reset = False
+            i += 1
+        else:
+            reset = True
+            j = 0
+            k = 0
+    return 0
+ 
